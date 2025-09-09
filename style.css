@@ -1,0 +1,66 @@
+
+           body
+        { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            background-color: #f0f0f0; 
+        }
+        .navbar 
+        { 
+            background-color: #1e1c1cff; 
+            color: white; 
+            padding: 15px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .navbar ul 
+        { 
+            list-style: none; 
+            display: flex; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .navbar li 
+        { 
+            margin: 0 15px; 
+        }
+        .navbar a 
+        { 
+            color: white; 
+            text-decoration: none; 
+        }
+        .band-info {
+            display: flex;
+            align-items: center;
+        }
+        .band-logo {
+            max-width: 85px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .band-name 
+        { 
+            font-size: 24px; 
+            font-weight: bold; 
+            color: #817e7eff;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .band-image
+        {
+            display: block;  
+            max-width: 2000px; 
+            width: 100%;
+            height: auto;
+        }
+        .footer
+        {
+            background-color: #1e1c1cff;
+            color: #8f8282ff;
+            text-align: center;
+            font-size: 15px;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
