@@ -1,18 +1,19 @@
 <?php
-session_start();
-require_once 'band_generators.php';
+// Forçar recarregamento da sessão
+//session_unset();
+//session_destroy();
+//session_start();
+require 'header.php';
+require 'footer.php';
 
 if (!isset($_SESSION['nom_groupe'])) {
-    $_SESSION['nom_groupe'] = "Baby Metal" ;
+    $_SESSION['nom_groupe'] = "Baby Metal";
 }
 
 if (!isset($_SESSION['logo'])) {
-    $_SESSION['logo'] = "logo/logo.png";
+    $_SESSION['logo'] = "logos/logo.jpg";
 }
-
-
 ?>
-
 
 
 <!DOCTYPE html>
@@ -26,53 +27,10 @@ if (!isset($_SESSION['logo'])) {
 </head>
 
 <body>
-    <!--navbar com logo e nome da banda gerados dinamicamente -->
-    <nav class="navbar">
-        <div class="band-info">
-            <img src="<?php echo generate_bandlogo() ?>" alt="Logo" class="band-logo">
-            <div class="band-name">
-                <?= htmlspecialchars(generate_bandname()) ?>
-            </div>
-        </div>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="band.php">Band</a></li>
-            <li><a href="#">Setlist</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
     <!-- imagem da banda -->
     <main>
-        <img src="maneskin.png" alt="Banda Maneskin" class="band-image">
+        <img src="babymetal.jpg" alt="Banda Maneskin" class="band-image">
     </main>
-
-    <footer class="footer">
-        <p>
-            <?php
-            // Array com os meses em francês
-            $mois = [
-                1 => 'janvier',
-                2 => 'février',
-                3 => 'mars',
-                4 => 'avril',
-                5 => 'mai',
-                6 => 'juin',
-                7 => 'juillet',
-                8 => 'août',
-                9 => 'septembre',
-                10 => 'octobre',
-                11 => 'novembre',
-                12 => 'décembre'
-            ];
-            $jour = date('d');
-            $mois_num = date('n');
-            $annee = date('Y');
-            $heure = date('H:i');
-            echo "Nous sommes le $jour {$mois[$mois_num]} $annee, il est $heure";
-            ?>
-        </p>
-    </footer>
 </body>
 
 </html>
