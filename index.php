@@ -3,8 +3,8 @@
 //session_unset();
 //session_destroy();
 //session_start();
-require 'header.php';
-require 'footer.php';
+require_once 'header.php';
+require_once 'footer.php';
 
 if (!isset($_SESSION['nom_groupe'])) {
     $_SESSION['nom_groupe'] = "Baby Metal";

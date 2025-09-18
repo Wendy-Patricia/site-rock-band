@@ -237,5 +237,15 @@ section p {
   transition: transform 0.3s ease;
 }
 
+.search-container {
+    margin-left: 20px;
+}
 
+#searchInput {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 250px;
+}
 
