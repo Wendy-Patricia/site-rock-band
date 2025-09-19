@@ -1,4 +1,4 @@
-/* Reset e estilos base */
+/* Reset e estilos base melhorados */
 * {
   margin: 0;
   padding: 0;
@@ -6,20 +6,21 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  background-color: #f5f5f5;
-  color: #333;
+  background: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 100%);
+  color: #B0B0B0;
   line-height: 1.6;
   padding-top: 80px; /* Compensa a navbar fixa */
-  padding-bottom: 80px; /* Compensa o footer fixo */
+  min-height: 100vh;
+  position: relative;
 }
 
-/* Navbar melhorada */
+/* Navbar com tema metal melhorada */
 .navbar {
-  background-color: #1e1c1c;
-  padding: 15px 5%;
-  color: white;
+  background: linear-gradient(to right, #0D0D0D, #1e1c1c, #0D0D0D);
+  padding: 12px 5%;
+  color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,8 +29,9 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 8px rgba(211, 47, 47, 0.3);
+  border-bottom: 1px solid #8B0000;
+  opacity: 0.98;
 }
 
 .navbar ul {
@@ -37,25 +39,45 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
-  gap: 25px;
+  gap: 20px;
 }
 
 .navbar li {
   margin: 0;
+  position: relative;
 }
 
 .navbar a {
-  color: white;
+  color: #B0B0B0;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
-  padding: 8px 12px;
+  transition: all 0.3s ease;
+  padding: 10px 15px;
   border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
 }
 
 .navbar a:hover {
-  color: #ffd700;
-  background-color: rgba(255, 255, 255, 0.1);
+  color: #D32F2F;
+  background-color: rgba(139, 0, 0, 0.15);
+  text-shadow: 0 0 8px rgba(211, 47, 47, 0.7);
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #D32F2F;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
 }
 
 .band-info {
@@ -68,137 +90,224 @@ body {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 50%;
+  border: 2px solid #D32F2F;
+  box-shadow: 0 0 15px rgba(211, 47, 47, 0.4);
+  transition: all 0.3s ease;
+}
+
+.band-logo:hover {
+  transform: rotate(5deg);
+  box-shadow: 0 0 20px rgba(211, 47, 47, 0.7);
 }
 
 .band-name {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  color: #d4af37;
-  font-family: 'Courier New', Courier, monospace;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  color: #D32F2F;
+  font-family: "Metal Lord", "Arial Black", sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 8px rgba(211, 47, 47, 0.5);
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.band-name::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #D32F2F, transparent);
 }
 
 /* Container principal para o conteúdo */
 .main-container {
-  min-height: calc(100vh - 160px); /* Altura total menos navbar e footer */
-  padding: 20px 0;
+  min-height: calc(100vh - 160px);
+  padding: 30px 0;
 }
 
-/* Conteúdo principal */
+/* Conteúdo principal com tema metal */
 section {
   max-width: 1200px;
-  margin: 20px auto;
-  background: #fff;
+  margin: 30px auto;
+  background: linear-gradient(145deg, #1a1a1a 0%, #0D0D0D 100%);
   padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(30, 28, 28, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid #2a2a2a;
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8B0000, #D32F2F, #8B0000);
 }
 
 section p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #444;
+  color: #B0B0B0;
   margin-bottom: 24px;
   text-align: justify;
   text-indent: 2em;
 }
 
-/* Imagem responsiva */
+/* Imagem responsiva com estilo metal */
 .band-image {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 8px;
   margin: 30px 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(211, 47, 47, 0.3);
+  border: 1px solid #2a2a2a;
+  transition: all 0.4s ease;
+  filter: grayscale(20%);
 }
 
-/* Footer melhorado */
+.band-image:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(211, 47, 47, 0.5);
+  filter: grayscale(0%) contrast(110%);
+}
+
+/* Footer com tema metal melhorado */
 .footer {
-  background-color: #1e1c1c;
-  color: #b8b8b8;
+  background: linear-gradient(to right, #0D0D0D, #1a1a1a, #0D0D0D);
+  color: #B0B0B0;
   text-align: center;
   font-size: 0.9rem;
-  padding: 20px 0;
-  position: fixed;
+  padding: 25px 0;
   width: 100%;
-  bottom: 0;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
   z-index: 999;
+  border-top: 1px solid #8B0000;
 }
 
 .footer p {
-  margin: 5px 0;
+  margin: 8px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* Setlist Styles - MODIFICADO */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #D32F2F, transparent);
+}
+
+/* Setlist Styles - Tema Metal Melhorado */
 .setlist-container {
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(30, 28, 28, 0.1);
-  padding: 30px;
+  background: linear-gradient(145deg, #1a1a1a 0%, #0D0D0D 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  padding: 35px;
+  border: 1px solid #2a2a2a;
+  position: relative;
+}
+
+.setlist-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8B0000, #D32F2F, #8B0000);
 }
 
 .setlist-header {
   text-align: center;
-  margin-bottom: 30px;
-  color: #1e1c1c;
+  margin-bottom: 35px;
+  color: #FFFFFF;
 }
 
 .setlist-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #d4af37;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: #D32F2F;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 12px rgba(211, 47, 47, 0.6);
+  font-family: "Metal Lord", "Arial Black", sans-serif;
+  letter-spacing: 1.5px;
+  position: relative;
+  display: inline-block;
 }
 
-/* Table Styles - MELHORADO */
+.setlist-header h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #D32F2F;
+  box-shadow: 0 0 10px rgba(211, 47, 47, 0.7);
+}
+
+/* Table Styles - Tema Metal Melhorado */
 .setlist-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
-  background: white;
-  border-radius: 12px;
+  margin: 25px 0;
+  background: linear-gradient(145deg, #1a1a1a 0%, #0D0D0D 100%);
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid #2a2a2a;
 }
 
 .setlist-table th,
 .setlist-table td {
   padding: 18px 25px;
   text-align: left;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #2a2a2a;
 }
 
 .setlist-table th {
-  background: linear-gradient(135deg, #1e1c1c 0%, #2a2828 100%);
-  color: white;
+  background: linear-gradient(135deg, #1e1c1c 0%, #0D0D0D 100%);
+  color: #D32F2F;
   font-weight: 600;
   font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  text-align: center;
 }
 
 .setlist-table th:hover {
-  background: linear-gradient(135deg, #2a2828 0%, #3a3636 100%);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #2a2828 0%, #1a1a1a 100%);
+  text-shadow: 0 0 10px rgba(211, 47, 47, 0.8);
 }
 
 .setlist-table th a {
-  color: white;
+  color: #D32F2F;
   text-decoration: none;
   display: block;
   padding: 15px 25px;
   margin: -18px -25px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .setlist-table th a:hover {
-  color: #ffd700;
+  color: #FFFFFF;
+  text-shadow: 0 0 12px rgba(211, 47, 47, 0.9);
 }
 
 .setlist-table tbody tr {
@@ -206,27 +315,36 @@ section p {
 }
 
 .setlist-table tbody tr:hover {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.12) 100%);
-  transform: translateX(5px);
+  background: linear-gradient(
+    135deg,
+    rgba(139, 0, 0, 0.15) 0%,
+    rgba(211, 47, 47, 0.1) 100%
+  );
+  transform: translateX(8px);
 }
 
 .setlist-table tbody tr:nth-child(even) {
-  background: #fafafa;
+  background: rgba(42, 42, 42, 0.3);
 }
 
 .setlist-table tbody tr:nth-child(even):hover {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0.16) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(139, 0, 0, 0.2) 0%,
+    rgba(211, 47, 47, 0.15) 100%
+  );
 }
 
 .setlist-table td {
   font-size: 1rem;
-  color: #444;
+  color: #B0B0B0;
   font-weight: 500;
 }
 
 .setlist-table td:first-child {
   font-weight: 600;
-  color: #1e1c1c;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Sorting Indicators */
@@ -237,15 +355,223 @@ section p {
   transition: transform 0.3s ease;
 }
 
+/* Search container com tema metal */
 .search-container {
-    margin-left: 20px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
 }
 
 #searchInput {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 250px;
+  padding: 12px 20px;
+  background: rgba(42, 42, 42, 0.6);
+  border: 1px solid #2a2a2a;
+  border-radius: 30px;
+  font-size: 16px;
+  width: 300px;
+  color: #FFFFFF;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3), 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
+#searchInput:focus {
+  outline: none;
+  border-color: #D32F2F;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 15px rgba(211, 47, 47, 0.4);
+}
+
+#searchInput::placeholder {
+  color: #666;
+}
+
+/* Modal com tema metal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(13, 13, 13, 0.95);
+}
+
+.modal-content {
+  background: linear-gradient(145deg, #1a1a1a 0%, #0D0D0D 100%);
+  margin: 10% auto;
+  padding: 35px;
+  border-radius: 12px;
+  width: 500px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(211, 47, 47, 0.4);
+  position: relative;
+  border: 1px solid #2a2a2a;
+  color: #B0B0B0;
+}
+
+.modal-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8B0000, #D32F2F, #8B0000);
+}
+
+.close {
+  color: #B0B0B0;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.close:hover {
+  color: #D32F2F;
+  text-shadow: 0 0 10px rgba(211, 47, 47, 0.8);
+  transform: scale(1.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(42, 42, 42, 0.6);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-size: 16px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #D32F2F;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 15px rgba(211, 47, 47, 0.3);
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.cancel-btn,
+.submit-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn {
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  color: #B0B0B0;
+  border: 1px solid #2a2a2a;
+}
+
+.cancel-btn:hover {
+  background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+  color: #FFFFFF;
+}
+
+.submit-btn {
+  background: linear-gradient(145deg, #8B0000, #D32F2F);
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(145deg, #D32F2F, #8B0000);
+  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5);
+  transform: translateY(-2px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+}
+
+.error-message {
+  color: #D32F2F;
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(139, 0, 0, 0.1);
+  border-left: 3px solid #D32F2F;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 500;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Adicionando uma fonte metal personalizada */
+@font-face {
+  font-family: 'Metal Lord';
+  src: url('https://fonts.cdnfonts.com/s/12428/MetalLord.woff') format('woff');
+}
+
+/* Efeitos de texto metal para títulos */
+.metal-text {
+  font-family: 'Metal Lord', 'Arial Black', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 8px rgba(211, 47, 47, 0.5);
+  color: #D32F2F;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 5%;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .setlist-table th, 
+  .setlist-table td {
+    padding: 12px 15px;
+  }
+  
+  .modal-content {
+    width: 90%;
+    padding: 25px;
+  }
+  
+  section {
+    padding: 25px;
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-left: 8px;
+  transition: filter 0.3s ease;
+  position: relative;
+}

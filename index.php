@@ -4,7 +4,7 @@
 //session_destroy();
 //session_start();
 require_once 'header.php';
-require_once 'footer.php';
+
 
 if (!isset($_SESSION['nom_groupe'])) {
     $_SESSION['nom_groupe'] = "Baby Metal";
@@ -34,3 +34,5 @@ if (!isset($_SESSION['logo'])) {
 </body>
 
 </html>
+
+<?php require_once 'footer.php'; ?>

@@ -1,14 +1,13 @@
 <?php
-//ligação PDO à base de dados
-
-$host = "localhost";
-$dbname = "myband";
-$username = "wendy";    // o user que criaste no TO DO 3
-$password = "1234"; // a senha que escolheste
+$host = "localhost";     // ou 127.0.0.1
+$db   = "myband";       // nome do banco
+$user = "root";          // usuário do MySQL
+$pass = "";              // senha (no XAMPP normalmente é vazio)
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // para gerar exccesoes ja que por default pdo envia so falso quando ha erros
+    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die("Erro de ligação à base de dados: " . $e->getMessage());
+    die("Erreur de connexion à la BD : " . $e->getMessage());
 }
+?>
