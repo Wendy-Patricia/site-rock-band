@@ -2,6 +2,7 @@
 session_start();
 require 'bd.php';
 
+
 if (isset($_GET['disconnect']) && $_GET['disconnect'] == 1) {
     session_destroy(); // Détruit la session
     header("Location: " . $_SERVER['PHP_SELF']); // Recharge la page proprement
@@ -36,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <nav class="navbar">
-        <div class="band-info"><img src="logos/logo.jpg" alt="Logo" class="band-logo">
+        <div class="band-info"><img src="photos/logo.jpg" alt="Logo" class="band-logo">
             <div class="band-name">babymetal</div>
         </div>
         <ul>
@@ -51,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </li>
             <li><a href="band.php">Band</a></li>
             <li><a href="setlist.php">Setlist</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
 

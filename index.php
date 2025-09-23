@@ -5,14 +5,6 @@
 //session_start();
 require_once 'header.php';
 
-
-if (!isset($_SESSION['nom_groupe'])) {
-    $_SESSION['nom_groupe'] = "Baby Metal";
-}
-
-if (!isset($_SESSION['logo'])) {
-    $_SESSION['logo'] = "logos/logo.jpg";
-}
 ?>
 
 
@@ -29,7 +21,7 @@ if (!isset($_SESSION['logo'])) {
 <body>
     <!-- imagem da banda -->
     <main>
-        <img src="babymetal.jpg" alt="Banda Maneskin" class="band-image">
+        <img src="photos/babymetal.jpg" alt="Banda Maneskin" class="band-image">
     </main>
 </body>
 
